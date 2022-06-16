@@ -10,5 +10,6 @@ namespace PongGame
     public class Palka
     {
         public Color color { get; set; }
+        public Point Location { get; set; }
     }
 }
