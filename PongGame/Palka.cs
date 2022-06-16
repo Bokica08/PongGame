@@ -11,11 +11,13 @@ namespace PongGame
     {
         public Color Color { get; set; }= Color.Black;
         public Point Location { get; set; }
+        public int formHeight { get; set; }
         public static int Width { get; set; } = 10;
-        public static int Height { get; set; } = 30;
-        public Palka(Point p)
+        public static int Height { get; set; } = 50;
+        public Palka(Point p,int height)
         {
             Location = p;
+            formHeight = height;
         }
         public void Draw(Graphics g)
         {
@@ -25,12 +27,36 @@ namespace PongGame
         }
         public void MoveUp()
         {
-            Location=new Point(Location.X, Location.Y+5);
+            if (Location.Y > Height) { 
+            Location=new Point(Location.X, Location.Y-30);
+            }
+            else
+            {
+                Location = new Point(Location.X, 5);
+            }
         }
         public void MoveDown()
         {
-            Location = new Point(Location.X, Location.Y - 5);
+            if (Location.Y < formHeight)
+            {
+                Location = new Point(Location.X, Location.Y + 30);
+            }
+            else
+            {
+                Location = new Point(Location.X, formHeight+10 );
+            }
         }
 
+        public void MoveMouse(int y)
+        {
+            if (Location.Y < formHeight || Location.Y>Height)
+            {
+                Location = new Point(Location.X, y);
+            }
+             if(Location.Y > formHeight)
+            {
+                Location = new Point(Location.X, formHeight + 10);
+            }
+        }
     }
 }
