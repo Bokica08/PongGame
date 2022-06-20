@@ -43,7 +43,7 @@ namespace PongGame
             }
             else
             {
-                Location = new Point(Location.X, formHeight+10 );
+                Location = new Point(Location.X, formHeight+50);
             }
         }
 
@@ -55,8 +55,9 @@ namespace PongGame
             }
              if(Location.Y > formHeight)
             {
-                Location = new Point(Location.X, formHeight + 10);
+                Location = new Point(Location.X, formHeight + 50);
             }
         }
+
     }
 }
