@@ -19,11 +19,11 @@ namespace PongGame
             this.height = height;
             this.width = width;
             Point po1 = new Point(20, 180);
-            Point po2 = new Point( 740, 180);
+            Point po2 = new Point(740, 180);
             Point p = new Point(400, 180);
             p1 = new Palka(po1, height, p1Name);
             p2 = new Palka(po2, height, p2Name);
-            t = new Topche(p, 2*width, height);
+            t = new Topche(p, 2 * width, height);
         }
         public void Draw(Graphics g)
         {
@@ -40,18 +40,23 @@ namespace PongGame
             p1.MoveDown();
         }
 
-        public void MoveMouse(int y)
+        public void MoveP2Up()
         {
-            p2.MoveMouse(y);
+            p2.MoveUp();
+        }
+
+        public void MoveP2Down()
+        {
+            p2.MoveDown();
         }
         public void TopceMove()
         {
             t.Move();
-            if(t.Location.X<0)
+            if (t.Location.X < 0)
             {
                 p1.Points++;
             }
-            if(t.Location.X>790)
+            if (t.Location.X > 790)
             {
                 p2.Points++;
             }
