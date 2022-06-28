@@ -42,10 +42,11 @@
             // txbP1
             // 
             this.txbP1.Location = new System.Drawing.Point(21, 85);
-            this.txbP1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbP1.Margin = new System.Windows.Forms.Padding(4);
             this.txbP1.Name = "txbP1";
             this.txbP1.Size = new System.Drawing.Size(180, 22);
             this.txbP1.TabIndex = 0;
+            this.txbP1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbP1_KeyDown);
             this.txbP1.Validating += new System.ComponentModel.CancelEventHandler(this.txbP1_Validating);
             // 
             // lblPlyrNms
@@ -81,16 +82,17 @@
             // txbP2
             // 
             this.txbP2.Location = new System.Drawing.Point(279, 85);
-            this.txbP2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbP2.Margin = new System.Windows.Forms.Padding(4);
             this.txbP2.Name = "txbP2";
             this.txbP2.Size = new System.Drawing.Size(180, 22);
             this.txbP2.TabIndex = 4;
+            this.txbP2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txbP2_KeyDown);
             this.txbP2.Validating += new System.ComponentModel.CancelEventHandler(this.txbP2_Validating);
             // 
             // btnOK
             // 
             this.btnOK.Location = new System.Drawing.Point(184, 140);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(100, 28);
             this.btnOK.TabIndex = 6;
@@ -113,7 +115,7 @@
             this.Controls.Add(this.lblPlyr1);
             this.Controls.Add(this.lblPlyrNms);
             this.Controls.Add(this.txbP1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

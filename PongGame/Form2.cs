@@ -72,5 +72,21 @@ namespace PongGame
                 errorProvider1.SetError(txbP1, null);
             }
         }
+
+        private void txbP2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                btnOK_Click(sender,e);
+            }
+        }
+
+        private void txbP1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnOK_Click(sender, e);
+            }
+        }
     }
 }
