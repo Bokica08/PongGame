@@ -26,8 +26,10 @@ namespace PongGame
             InitializeComponent();
             DoubleBuffered = true;
             timer1.Interval = 50;
+            timer2.Interval = 1000;
             timer1.Stop();
-                
+            timer2.Stop();
+
         }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
@@ -85,13 +87,17 @@ namespace PongGame
         private void pobednik(string name)
         {
             timer1.Stop();
+            timer2.Stop();
             DialogResult r = MessageBox.Show("Играчот " + name + " е победник! Дали сакате нова игра?", "Дали сте сигруни?", MessageBoxButtons.YesNo);
             if (r == DialogResult.Yes)
             {
                 scena = new Scena(800, 400, p1Name, p2Name);
                 DoubleBuffered = true;
                 timer1.Interval = 50;
+                timer2.Interval = 1000;
+
                 timer1.Start();
+                timer2.Start();
             }
             else
             {
@@ -113,6 +119,7 @@ namespace PongGame
                 lblPlayer2.Text = string.Format("{0}: 0", scena.p2.Name);
                 form2.Close();
                 timer1.Start();
+                timer2.Start();
             }
 
             else if(form2.ShowDialog() == DialogResult.Cancel)
@@ -130,6 +137,15 @@ namespace PongGame
         private void toolStripStatusLabel1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+
+            if(scena.t.oddalecena)
+            {
+                scena.t.oddalecena = false;
+            }
         }
     }
 }

@@ -38,9 +38,9 @@ namespace PongGame
         }
         public void Move()
         {
-          if(Location.X<0 || Location.X>790)
+          if(Location.X<0 || Location.X>770)
             {
-
+                velocityX = 10;
                 Location = new Point(400 , 180);
                 IsStarted = false;
             }
@@ -51,8 +51,8 @@ namespace PongGame
          
             {
                 if (IsStarted) {
-                    double dx = velocityX * 2;
-                    Location = new Point(Location.X + (int)dx, Location.Y+velocityY);
+                    int dx = velocityX * 2;
+                    Location = new Point(Location.X + dx, Location.Y+velocityY);
 
                 }
                 else
@@ -64,11 +64,17 @@ namespace PongGame
         }
         public bool isHit(Point p)
         {
-            double d = Math.Sqrt(Math.Pow(p.X - Location.X, 2) + Math.Pow(p.Y - Location.Y, 2));
-            if(d<=50)
+            double d = Math.Sqrt(Math.Pow(p.X - Location.X, 2) + Math.Pow(p.Y+25- Location.Y, 2));
+            if(d<=25)
             {
-                    Move();
-                
+                if(velocityX>0)
+                {
+                    velocityX++;
+                }
+                else
+                {
+                    velocityX--;
+                }
                 if (!oddalecena) { 
                 velocityX = -velocityX;
                 oddalecena = true;
