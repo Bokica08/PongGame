@@ -16,12 +16,12 @@ namespace PongGame
         public double Angle { get; set; }
 
         private int velocityX = 10;
-        private int velocityY=10;
+        private int velocityY = 10;
         public int formWidth { get; set; }
         public int formHeight { get; set; }
         public int Velocity { get; }
         public bool oddalecena { get; set; }
-        public Topche(Point location,int width, int formHeight)
+        public Topche(Point location, int width, int formHeight)
         {
             Location = location;
             Color = Color.Black;
@@ -33,26 +33,27 @@ namespace PongGame
         public void Draw(Graphics g)
         {
             Brush b = new SolidBrush(Color);
-            g.FillEllipse(b, Location.X-Radius, Location.Y-Radius, Radius * 2, Radius * 2);
+            g.FillEllipse(b, Location.X - Radius, Location.Y - Radius, Radius * 2, Radius * 2);
             b.Dispose();
         }
         public void Move()
         {
-          if(Location.X<0 || Location.X>790)
+            if (Location.X < 0 || Location.X > 770)
             {
-
-                Location = new Point(400 , 180);
+                velocityX = 10;
+                Location = new Point(400, 180);
                 IsStarted = false;
             }
-          if(Location.Y<50 || Location.Y>370)
+            if (Location.Y < 50 || Location.Y > 370)
             {
                 velocityY = -velocityY;
             }
-         
+
             {
-                if (IsStarted) {
-                    double dx = velocityX * 2;
-                    Location = new Point(Location.X + (int)dx, Location.Y+velocityY);
+                if (IsStarted)
+                {
+                    int dx = velocityX * 2;
+                    Location = new Point(Location.X + dx, Location.Y + velocityY);
 
                 }
                 else
@@ -64,18 +65,25 @@ namespace PongGame
         }
         public bool isHit(Point p)
         {
-            double d = Math.Sqrt(Math.Pow(p.X - Location.X, 2) + Math.Pow(p.Y - Location.Y, 2));
-            if(d<=50)
+            double d = Math.Sqrt(Math.Pow(p.X - Location.X, 2) + Math.Pow(p.Y + 25 - Location.Y, 2));
+            if (d <= 25)
             {
-                    Move();
-                
-                if (!oddalecena) { 
-                velocityX = -velocityX;
-                oddalecena = true;
+                if (velocityX > 0)
+                {
+                    velocityX++;
+                }
+                else
+                {
+                    velocityX--;
+                }
+                if (!oddalecena)
+                {
+                    velocityX = -velocityX;
+                    oddalecena = true;
                 }
                 return true;
             }
-            if(d>50)
+            if (d > 50)
             {
                 oddalecena = false;
             }
