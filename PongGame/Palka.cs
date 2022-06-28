@@ -14,10 +14,13 @@ namespace PongGame
         public int formHeight { get; set; }
         public static int Width { get; set; } = 10;
         public static int Height { get; set; } = 50;
-        public Palka(Point p,int height)
+        public int Points { get; set; } = 0;
+        public string Name { get; set; }
+        public Palka(Point p, int height, string name)
         {
             Location = p;
             formHeight = height;
+            Name = name;
         }
         public void Draw(Graphics g)
         {

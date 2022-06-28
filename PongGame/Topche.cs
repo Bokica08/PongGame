@@ -38,7 +38,6 @@ namespace PongGame
         }
         public void Move(bool direction)
         {
-
           if(Location.X<0 || Location.X>2*formWidth)
             {
                 Location = new Point(2 * formWidth / 2, formHeight / 2 + 30);

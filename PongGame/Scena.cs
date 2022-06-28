@@ -11,30 +11,27 @@ namespace PongGame
     {
         public int height { get; set; }
         public int width { get; set; }
-        Palka p1;
-        Palka p2;
-        Topche t;
+        public Palka p1 { get; set; }
+        public Palka p2 { get; set; }
+        public Topche t { get; set; }
         public bool direction { get; set; }
-        public Scena(int height, int width)
+        public Scena(int height, int width, string p1Name, string p2Name)
         {
             this.height = height;
             this.width = width;
             Point po1 = new Point(20, height / 2);
-            Point po2 = new Point(2*width, height / 2);
+            Point po2 = new Point(2 * width, height / 2);
             direction = false;
-            Point p = new Point(2 * width / 2, height / 2+30);
-            p1 = new Palka(po1,height);
-            p2 = new Palka(po2,height);
-                        t = new Topche(p,width,height);
+            Point p = new Point(2 * width / 2, height / 2 + 30);
+            p1 = new Palka(po1, height, p1Name);
+            p2 = new Palka(po2, height, p2Name);
+            t = new Topche(p, width, height);
         }
         public void Draw(Graphics g)
         {
-
-
             p1.Draw(g);
             p2.Draw(g);
             t.Draw(g);
-
         }
         public void MoveP1Up()
         {
@@ -47,7 +44,7 @@ namespace PongGame
 
         public void MoveMouse(int y)
         {
-            p2.MoveMouse(y);       
+            p2.MoveMouse(y);
         }
         public void TopceMove()
         {
@@ -56,14 +53,14 @@ namespace PongGame
         }
         public void isHit()
         {
-            if(t.isHit(p1.Location) || t.isHit(p2.Location))
+            if (t.isHit(p1.Location) || t.isHit(p2.Location))
             {
                 t.IsStarted = true;
 
             }
             else
             {
-
+                //?
             }
         }
     }
