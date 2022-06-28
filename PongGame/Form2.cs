@@ -23,6 +23,7 @@ namespace PongGame
         {
             P1Name = txbP1.Text;
             P2Name = txbP2.Text;
+
             DialogResult = DialogResult.OK;
             this.Close();
         }
