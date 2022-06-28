@@ -40,9 +40,14 @@ namespace PongGame
             p1.MoveDown();
         }
 
-        public void MoveMouse(int y)
+        public void MoveP2Up()
         {
-            p2.MoveMouse(y);
+            p2.MoveUp();
+        }
+
+        public void MoveP2Down()
+        {
+            p2.MoveDown();
         }
         public void TopceMove()
         {

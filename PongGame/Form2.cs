@@ -44,11 +44,6 @@ namespace PongGame
                 errorProvider1.SetError(txbP2, "Името е задолжително!");
                 e.Cancel = true;
             }
-          else  if(txbP2.Text.Length>10)
-            {
-                errorProvider1.SetError(txbP2, "Името мора да има до 10 карактери");
-                e.Cancel = true;
-            }
             else
             {
                 errorProvider1.SetError(txbP2, null);
@@ -60,11 +55,6 @@ namespace PongGame
             if (string.IsNullOrWhiteSpace(txbP1.Text))
             {
                 errorProvider1.SetError(txbP1, "Името е задолжително!");
-                e.Cancel = true;
-            }
-           else if (txbP1.Text.Length > 10)
-            {
-                errorProvider1.SetError(txbP1, "Името мора да има до 10 карактери");
                 e.Cancel = true;
             }
             else

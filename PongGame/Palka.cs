@@ -9,7 +9,7 @@ namespace PongGame
 {
     public class Palka
     {
-        public Color Color { get; set; }= Color.Black;
+        public Color Color { get; set; } = Color.Black;
         public Point Location { get; set; }
         public int formHeight { get; set; }
         public static int Width { get; set; } = 10;
@@ -30,8 +30,9 @@ namespace PongGame
         }
         public void MoveUp()
         {
-            if (Location.Y > Height) { 
-            Location=new Point(Location.X, Location.Y-30);
+            if (Location.Y > Height)
+            {
+                Location = new Point(Location.X, Location.Y - 25);
             }
             else
             {
@@ -42,29 +43,12 @@ namespace PongGame
         {
             if (Location.Y < 350)
             {
-                Location = new Point(Location.X, Location.Y + 30);
+                Location = new Point(Location.X, Location.Y + 25);
             }
             else
             {
                 Location = new Point(Location.X, 350);
             }
         }
-
-        public void MoveMouse(int y)
-        {
-            if (Location.Y < 350 || Location.Y>Height)
-            {
-                Location = new Point(Location.X, y);
-            }
-            if(Location.Y<50)
-            {
-                Location = new Point(Location.X, 50);
-            }
-             if(Location.Y > 350)
-            {
-                Location = new Point(Location.X, 350);
-            }
-        }
-
     }
 }
