@@ -14,18 +14,16 @@ namespace PongGame
         public Palka p1 { get; set; }
         public Palka p2 { get; set; }
         public Topche t { get; set; }
-        public bool direction { get; set; }
         public Scena(int height, int width, string p1Name, string p2Name)
         {
             this.height = height;
             this.width = width;
-            Point po1 = new Point(20, height / 2);
-            Point po2 = new Point(2 * width, height / 2);
-            direction = false;
-            Point p = new Point(2 * width / 2, height / 2 + 30);
+            Point po1 = new Point(20, 180);
+            Point po2 = new Point( 740, 180);
+            Point p = new Point(400, 180);
             p1 = new Palka(po1, height, p1Name);
             p2 = new Palka(po2, height, p2Name);
-            t = new Topche(p, width, height);
+            t = new Topche(p, 2*width, height);
         }
         public void Draw(Graphics g)
         {
@@ -48,7 +46,16 @@ namespace PongGame
         }
         public void TopceMove()
         {
-            t.Move(direction);
+            t.Move();
+            if(t.Location.X<0)
+            {
+                p1.Points++;
+            }
+            if(t.Location.X>790)
+            {
+                p2.Points++;
+            }
+
 
         }
         public void isHit()

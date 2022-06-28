@@ -35,71 +35,68 @@
             this.lblPlyr2 = new System.Windows.Forms.Label();
             this.txbP2 = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // txbP1
             // 
-            this.txbP1.Location = new System.Drawing.Point(16, 69);
+            this.txbP1.Location = new System.Drawing.Point(21, 85);
+            this.txbP1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbP1.Name = "txbP1";
-            this.txbP1.Size = new System.Drawing.Size(136, 20);
+            this.txbP1.Size = new System.Drawing.Size(180, 22);
             this.txbP1.TabIndex = 0;
             this.txbP1.Validating += new System.ComponentModel.CancelEventHandler(this.txbP1_Validating);
             // 
             // lblPlyrNms
             // 
             this.lblPlyrNms.AutoSize = true;
-            this.lblPlyrNms.Location = new System.Drawing.Point(13, 13);
+            this.lblPlyrNms.Location = new System.Drawing.Point(17, 16);
+            this.lblPlyrNms.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlyrNms.Name = "lblPlyrNms";
-            this.lblPlyrNms.Size = new System.Drawing.Size(100, 13);
+            this.lblPlyrNms.Size = new System.Drawing.Size(180, 16);
             this.lblPlyrNms.TabIndex = 2;
-            this.lblPlyrNms.Text = "Enter player names:";
+            this.lblPlyrNms.Text = "Внеси имиња на играчите:";
             // 
             // lblPlyr1
             // 
             this.lblPlyr1.AutoSize = true;
-            this.lblPlyr1.Location = new System.Drawing.Point(12, 46);
+            this.lblPlyr1.Location = new System.Drawing.Point(16, 57);
+            this.lblPlyr1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlyr1.Name = "lblPlyr1";
-            this.lblPlyr1.Size = new System.Drawing.Size(48, 13);
+            this.lblPlyr1.Size = new System.Drawing.Size(60, 16);
             this.lblPlyr1.TabIndex = 3;
-            this.lblPlyr1.Text = "Player 1:";
+            this.lblPlyr1.Text = "Играч 1:";
             // 
             // lblPlyr2
             // 
             this.lblPlyr2.AutoSize = true;
-            this.lblPlyr2.Location = new System.Drawing.Point(206, 46);
+            this.lblPlyr2.Location = new System.Drawing.Point(275, 57);
+            this.lblPlyr2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlyr2.Name = "lblPlyr2";
-            this.lblPlyr2.Size = new System.Drawing.Size(48, 13);
+            this.lblPlyr2.Size = new System.Drawing.Size(60, 16);
             this.lblPlyr2.TabIndex = 5;
-            this.lblPlyr2.Text = "Player 2:";
+            this.lblPlyr2.Text = "Играч 2:";
             // 
             // txbP2
             // 
-            this.txbP2.Location = new System.Drawing.Point(209, 69);
+            this.txbP2.Location = new System.Drawing.Point(279, 85);
+            this.txbP2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txbP2.Name = "txbP2";
-            this.txbP2.Size = new System.Drawing.Size(136, 20);
+            this.txbP2.Size = new System.Drawing.Size(180, 22);
             this.txbP2.TabIndex = 4;
             this.txbP2.Validating += new System.ComponentModel.CancelEventHandler(this.txbP2_Validating);
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(58, 112);
+            this.btnOK.Location = new System.Drawing.Point(184, 140);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(100, 28);
             this.btnOK.TabIndex = 6;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(227, 112);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 7;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // errorProvider1
             // 
@@ -107,16 +104,16 @@
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 147);
-            this.Controls.Add(this.btnCancel);
+            this.ClientSize = new System.Drawing.Size(481, 181);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lblPlyr2);
             this.Controls.Add(this.txbP2);
             this.Controls.Add(this.lblPlyr1);
             this.Controls.Add(this.lblPlyrNms);
             this.Controls.Add(this.txbP1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form2";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -133,7 +130,6 @@
         private System.Windows.Forms.Label lblPlyr2;
         private System.Windows.Forms.TextBox txbP2;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

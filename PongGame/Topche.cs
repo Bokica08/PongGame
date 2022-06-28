@@ -36,21 +36,22 @@ namespace PongGame
             g.FillEllipse(b, Location.X-Radius, Location.Y-Radius, Radius * 2, Radius * 2);
             b.Dispose();
         }
-        public void Move(bool direction)
+        public void Move()
         {
-          if(Location.X<0 || Location.X>2*formWidth)
+          if(Location.X<0 || Location.X>790)
             {
-                Location = new Point(2 * formWidth / 2, formHeight / 2 + 30);
+
+                Location = new Point(400 , 180);
                 IsStarted = false;
             }
-          if(Location.Y<0 || Location.Y>1.33*formHeight)
+          if(Location.Y<50 || Location.Y>370)
             {
                 velocityY = -velocityY;
             }
          
             {
                 if (IsStarted) {
-                    double dx = velocityX * 1.5;
+                    double dx = velocityX * 2;
                     Location = new Point(Location.X + (int)dx, Location.Y+velocityY);
 
                 }
@@ -64,8 +65,10 @@ namespace PongGame
         public bool isHit(Point p)
         {
             double d = Math.Sqrt(Math.Pow(p.X - Location.X, 2) + Math.Pow(p.Y - Location.Y, 2));
-            if(d<50)
+            if(d<=50)
             {
+                    Move();
+                
                 if (!oddalecena) { 
                 velocityX = -velocityX;
                 oddalecena = true;

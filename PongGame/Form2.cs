@@ -21,24 +21,33 @@ namespace PongGame
         }
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (!ValidateChildren())
+            {
+                return;
+            }
+
+            this.DialogResult = DialogResult.OK;
             P1Name = txbP1.Text;
             P2Name = txbP2.Text;
-
-            DialogResult = DialogResult.OK;
-            this.Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Close();
+    
+            this.DialogResult = DialogResult.Cancel;
         }
 
         private void txbP2_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txbP2.Text))
             {
-                e.Cancel = true;
                 errorProvider1.SetError(txbP2, "Името е задолжително!");
+                e.Cancel = true;
+            }
+          else  if(txbP2.Text.Length>10)
+            {
+                errorProvider1.SetError(txbP2, "Името мора да има до 10 карактери");
+                e.Cancel = true;
             }
             else
             {
@@ -50,8 +59,13 @@ namespace PongGame
         {
             if (string.IsNullOrWhiteSpace(txbP1.Text))
             {
-                e.Cancel = true;
                 errorProvider1.SetError(txbP1, "Името е задолжително!");
+                e.Cancel = true;
+            }
+           else if (txbP1.Text.Length > 10)
+            {
+                errorProvider1.SetError(txbP1, "Името мора да има до 10 карактери");
+                e.Cancel = true;
             }
             else
             {

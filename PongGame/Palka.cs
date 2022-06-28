@@ -35,30 +35,34 @@ namespace PongGame
             }
             else
             {
-                Location = new Point(Location.X, 5);
+                Location = new Point(Location.X, 30);
             }
         }
         public void MoveDown()
         {
-            if (Location.Y < formHeight)
+            if (Location.Y < 350)
             {
                 Location = new Point(Location.X, Location.Y + 30);
             }
             else
             {
-                Location = new Point(Location.X, formHeight+50);
+                Location = new Point(Location.X, 350);
             }
         }
 
         public void MoveMouse(int y)
         {
-            if (Location.Y < formHeight || Location.Y>Height)
+            if (Location.Y < 350 || Location.Y>Height)
             {
                 Location = new Point(Location.X, y);
             }
-             if(Location.Y > formHeight)
+            if(Location.Y<50)
             {
-                Location = new Point(Location.X, formHeight + 50);
+                Location = new Point(Location.X, 50);
+            }
+             if(Location.Y > 350)
+            {
+                Location = new Point(Location.X, 350);
             }
         }
 
