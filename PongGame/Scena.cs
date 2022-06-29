@@ -56,7 +56,7 @@ namespace PongGame
             {
                 p1.Points++;
             }
-            if (t.Location.X > 790)
+            if (t.Location.X > 770)
             {
                 p2.Points++;
             }

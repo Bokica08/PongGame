@@ -50,6 +50,7 @@
             this.lblPlayer1.Size = new System.Drawing.Size(38, 29);
             this.lblPlayer1.TabIndex = 0;
             this.lblPlayer1.Text = ": 0";
+            this.lblPlayer1.Click += new System.EventHandler(this.lblPlayer1_Click);
             // 
             // lblPlayer2
             // 
@@ -62,9 +63,6 @@
             this.lblPlayer2.TabIndex = 1;
             this.lblPlayer2.Text = ": 0";
             this.lblPlayer2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // timer2
-            // 
             // 
             // Form1
             // 

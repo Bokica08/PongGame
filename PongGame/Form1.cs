@@ -119,5 +119,10 @@ namespace PongGame
                 this.Close();
             }
         }
+
+        private void lblPlayer1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
